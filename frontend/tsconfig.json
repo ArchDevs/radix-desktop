@@ -16,8 +16,24 @@
     "checkJs": true,
     "isolatedModules": true,
     "paths": {
-      "$lib": ["./src/lib"],
-      "$lib/*": ["./src/lib/*"]
+      "$lib": [
+        "./src/lib"
+      ],
+      "$lib/*": [
+        "./src/lib/*"
+      ],
+      "$store": [
+        "./src/store"
+      ],
+      "$store/*": [
+        "./src/store/*"
+      ],
+      "$src": [
+        "./src"
+      ],
+      "$src/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
