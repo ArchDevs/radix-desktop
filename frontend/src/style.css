@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* ── Typography ───────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/nunito-v16-latin-regular.woff2') format('woff2');
+}
+
 @theme {
   --color-border: var(--border);
   --color-input: var(--input);
@@ -31,29 +41,32 @@
 
 @layer base {
   :root {
-    --background: #09090b; /* Zinc 950 */
-    --foreground: #fafafa; /* Zinc 50 */
+    --background: #111113;
+    /* Dark charcoal, not pure black */
+    --foreground: #f4f4f5;
 
-    --card: #09090b;
-    --card-foreground: #fafafa;
+    --card: #18181b;
+    /* Slightly lighter surface */
+    --card-foreground: #f4f4f5;
 
-    --popover: #09090b;
-    --popover-foreground: #fafafa;
+    --popover: #18181b;
+    --popover-foreground: #f4f4f5;
 
-    --primary: #fafafa;
-    --primary-foreground: #18181b;
+    --primary: #f4f4f5;
+    --primary-foreground: #09090b;
 
-    --secondary: #27272a; /* Zinc 800 */
-    --secondary-foreground: #fafafa;
+    --secondary: #27272a;
+    /* Elevated surface */
+    --secondary-foreground: #f4f4f5;
 
     --muted: #27272a;
-    --muted-foreground: #a1a1aa; /* Zinc 400 */
+    --muted-foreground: #a1a1aa;
 
     --accent: #27272a;
-    --accent-foreground: #fafafa;
+    --accent-foreground: #f4f4f5;
 
     --destructive: #7f1d1d;
-    --destructive-foreground: #fafafa;
+    --destructive-foreground: #f4f4f5;
 
     --border: #27272a;
     --input: #27272a;
@@ -67,24 +80,32 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground tracking-tight max-h-screen overflow-hidden;
+    font-family: 'Nunito', 'JetBrains Mono', system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom Scrollbar for dark theme */
+  /* Scrollbar - elegant charcoal */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
+
   ::-webkit-scrollbar-track {
     background: transparent;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: #3f3f46;
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    /* subtle rail */
+    border-radius: 6px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #52525b;
+    background: rgba(255, 255, 255, 0.15);
   }
 }
